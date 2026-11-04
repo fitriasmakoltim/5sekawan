@@ -210,6 +210,15 @@ footer b { color: var(--gold-soft); }
   .calc .lines .k { margin-top: 6px; }
 }
 
+
+nav.toc { }
+nav.toc .lab-chip { flex: none; font: inherit; font-weight: 800; font-size: 15px; color: #fff; cursor: pointer; padding: 4px 14px; border-radius: 999px; border: 2px solid var(--ink); background-color: #1f6f9c; background-image: linear-gradient(rgba(20, 74, 112, .35), rgba(20, 74, 112, .35)), var(--batik-biru, none); background-size: auto, 48px 42px; text-shadow: 1px 1px 0 var(--ink); }
+nav.toc .lab-chip:hover, nav.toc .lab-chip:focus-visible, nav.toc .lab-chip[aria-expanded="true"] { outline: 3px solid var(--gold); outline-offset: 1px; }
+.lab-menu { max-width: 680px; margin: 8px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+nav.toc .lab-menu a { text-decoration: none; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink); padding: 8px 12px; font-weight: 700; font-size: 14.5px; line-height: 1.3; display: grid; gap: 1px; }
+nav.toc .lab-menu a b { font-family: var(--f-display); font-weight: 400; font-size: 18px; color: #1f6f9c; }
+nav.toc .lab-menu a:hover, nav.toc .lab-menu a:focus-visible { border-color: var(--ink); color: var(--ink); background: #fff3c4; outline: none; }
+@media (max-width: 520px) { .lab-menu { grid-template-columns: minmax(0, 1fr); } }
 /* ---- byline, beranda ---- */
 .byline { margin: 0; font-weight: 800; color: var(--gold-soft); letter-spacing: .02em; }
 .home .id-card { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 16px; }
@@ -286,8 +295,15 @@ footer ol { margin: 0 0 6px; padding-left: 1.3em; display: grid; gap: 2px; }
   </header>
 
   <nav class="toc" aria-label="Daftar isi"><div class="row">
-    <a href="#beranda">Beranda</a><a href="#tokoh">Tokoh</a><a href="#bab-1">Bab 1</a><a href="#bab-2">Bab 2</a><a href="#bab-3">Bab 3</a><a href="#bab-4">Bab 4</a><a href="#rangkuman">Rangkuman</a><a href="#kuis">Kuis</a>
-  </div></nav>
+    <a href="#beranda">Beranda</a><a href="#tokoh">Tokoh</a><a href="#bab-1">Bab 1</a><a href="#bab-2">Bab 2</a><a href="#bab-3">Bab 3</a><a href="#bab-4">Bab 4</a><button type="button" class="lab-chip" id="labBtn" aria-expanded="false" aria-controls="labMenu">Lab Mini ▾</button><a href="#rangkuman">Rangkuman</a><a href="#kuis">Kuis</a>
+  </div>
+    <div class="lab-menu" id="labMenu" hidden>
+      <a href="#lab-1"><b>Lab 1</b> Terapung, melayang, atau tenggelam?</a>
+      <a href="#lab-2"><b>Lab 2</b> Seberapa dalam Oto menyelam?</a>
+      <a href="#lab-3"><b>Lab 3</b> Pompa hidrolik di doorsmeer</a>
+      <a href="#lab-4"><b>Lab 4</b> Neraca pegas dan gaya apung</a>
+    </div>
+  </nav>
 
   <section id="beranda" class="wrap home" style="scroll-margin-top:70px">
     <div class="sec-head"><h2>Beranda</h2><p>Media pembelajaran interaktif berbentuk komik untuk materi Fluida Statis.</p></div>
@@ -1826,6 +1842,16 @@ function refit() { const w = document.getElementById('strip').clientWidth; if (w
 (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(refit);
 setTimeout(refit, 1200);
 window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(refit, 250); });
+
+/* Lab Mini menu in the top bar */
+(() => {
+  const btn = document.getElementById('labBtn'), menu = document.getElementById('labMenu');
+  const set = open => { menu.hidden = !open; btn.setAttribute('aria-expanded', open); };
+  btn.addEventListener('click', e => { e.stopPropagation(); set(menu.hidden); });
+  menu.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', e => { if (!menu.hidden && !e.target.closest('#labMenu')) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+})();
 
 /* quiz */
 const quizEl = document.getElementById('quiz');
