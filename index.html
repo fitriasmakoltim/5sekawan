@@ -232,7 +232,7 @@ footer ol { margin: 0 0 6px; padding-left: 1.3em; display: grid; gap: 2px; }
 
 /* ---- Lab Mini ---- */
 .lab { background: var(--paper); color: var(--ink); border: 4px solid var(--ink); border-radius: 12px; box-shadow: 6px 6px 0 var(--ink); padding: 0 0 14px; display: grid; gap: 12px; overflow: hidden; scroll-margin-top: 70px; }
-.lab-hd { background: #1f6f9c; border-bottom: 4px solid var(--ink); padding: 10px 16px 12px; display: grid; gap: 2px; }
+.lab-hd { background-color: #1f6f9c; background-image: linear-gradient(rgba(20, 74, 112, .28), rgba(20, 74, 112, .28)), var(--batik-biru, none); background-size: auto, 72px 63px; border-bottom: 4px solid var(--ink); padding: 10px 16px 12px; display: grid; gap: 2px; }
 .lab-tag { justify-self: start; font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--ink); border: 2px solid var(--ink); border-radius: 6px; padding: 0 8px; }
 .lab-hd h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(22px, 5vw, 30px); line-height: 1.05; color: #fff; -webkit-text-stroke: 1px var(--ink); text-shadow: 2px 2px 0 var(--ink); }
 .lab-intro { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 10px; align-items: center; padding: 0 16px; }
@@ -1744,6 +1744,10 @@ function renderCalc(c) {
 /* ---- boot ---- */
 document.getElementById('defs').innerHTML = defs();
 document.getElementById('band1').innerHTML = bandSVG();
+try {
+  const bt = `<svg xmlns='http://www.w3.org/2000/svg' width='96' height='84'><rect width='96' height='84' fill='#2b8fd6'/>${sorumeC(26, 30, 24, '#ffffff', '#e8873a', '#e8873a', 10)}${sorumeC(74, 66, 14, '#ffffff', '#e8873a', '#e8873a', -20)}${wave(54, 22, 1, '#1d2f7a')}${wave(6, 74, 1, '#1d2f7a')}<circle cx='84' cy='14' r='3' fill='#e8873a'/><circle cx='46' cy='52' r='2.4' fill='#fff'/></svg>`;
+  document.documentElement.style.setProperty('--batik-biru', `url("data:image/svg+xml,${encodeURIComponent(bt)}")`);
+} catch (e) {}
 try {
   const pat = `<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><g opacity='.16'>${crossX(30, 30, 9, '#e2a83b', 3)}${sorume(90, 88, 22, '#e2a83b')}</g></svg>`;
   document.body.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(pat)}")`;
