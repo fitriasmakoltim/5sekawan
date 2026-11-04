@@ -232,7 +232,7 @@ footer b { color: var(--gold-soft); }
   <section id="tokoh" class="wrap" style="scroll-margin-top:70px">
     <div class="sec-head"><h2>Kenalan Dulu</h2><p>Lima sahabat dari lima suku di Sulawesi Tenggara, satu kelas, satu rasa penasaran.</p></div>
     <div class="cast" id="cast"></div>
-    <div class="motif-note"><div id="motifSwatch"></div><div><b style="color:var(--gold-soft)">Motif bunga sorume</b>, anggrek emas khas Sulawesi Tenggara, ada pada batik merah Bu Fitria, ikat kepala batik biru Soru, dan pin jilbab Rume.</div></div>
+    <div class="motif-note"><div id="motifSwatch"></div><div><b style="color:var(--gold-soft)">Motif bunga sorume</b> pada ikat kepala Soru, pin jilbab Rume, dan baju Bu Fitria merupakan bunga anggrek khas Kolaka Timur. Kelima sahabat memakai batik biru bermotif sorume.</div></div>
   </section>
 
   <main class="wrap" id="strip"></main>
@@ -339,11 +339,11 @@ function defs() {
 /* ---------- CHARACTERS ---------- */
 const CHAR = {
   fitria: { skin: '#f0c7a6', hijab: '#f1e3c6', hijabS: '#cdb48a', top: 'url(#pBatikMerah)', topSolid: '#b8232f', kind: 'hijab', drape: 'pashmina' },
-  rume: { skin: '#f3cba4', hijab: '#ffffff', hijabS: '#cfd3db', top: C.shirt, kind: 'hijab', pin: true },
-  soru: { skin: '#dfa274', hair: '#1b1414', top: C.shirt, kind: 'soru' },
-  tugu: { skin: '#d49867', hair: '#231a17', top: C.shirt, kind: 'tugu' },
-  devi: { skin: '#e9b58b', hair: '#191215', top: C.shirt, kind: 'devi' },
-  oto: { skin: '#b4774b', hair: '#1f1612', top: C.shirt, kind: 'oto' },
+  rume: { skin: '#f3cba4', hijab: '#ffffff', hijabS: '#cfd3db', top: 'url(#pBatikBiruL)', kind: 'hijab', pin: true },
+  soru: { skin: '#dfa274', hair: '#1b1414', top: 'url(#pBatikBiruL)', kind: 'soru' },
+  tugu: { skin: '#d49867', hair: '#231a17', top: 'url(#pBatikBiruL)', kind: 'tugu' },
+  devi: { skin: '#e9b58b', hair: '#191215', top: 'url(#pBatikBiruL)', kind: 'devi' },
+  oto: { skin: '#b4774b', hair: '#1f1612', top: 'url(#pBatikBiruL)', kind: 'oto' },
 };
 
 function eyes(e, look = 0) {
@@ -404,15 +404,14 @@ function face(c, e, opt) {
 
 function torso(c, opt) {
   const top = c.top;
-  const teacher = c.kind === 'hijab' && top !== C.shirt;
+  const teacher = c.drape === 'pashmina';
   let s = `<path d="M-150,0 C-152,-78 -122,-124 -62,-138 L62,-138 C122,-124 152,-78 150,0 Z" fill="${top}" stroke="${INK}" stroke-width="5"/>`;
   if (!teacher) {
-    // school shirt: collar, placket, pocket with OSIS badge
-    s += `<path d="M0,-118 L0,0" stroke="${C.shirtS}" stroke-width="4"/>
-      <path d="M-46,-140 L0,-106 L-20,-86 L-58,-128Z" fill="#fff" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M46,-140 L0,-106 L20,-86 L58,-128Z" fill="#fff" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
-      <rect x="-104" y="-74" width="44" height="48" rx="4" fill="none" stroke="${C.shirtS}" stroke-width="3.5"/>
-      <circle cx="-82" cy="-60" r="9" fill="#9a8b6a" stroke="${INK}" stroke-width="2"/>`;
+    // blue sorume batik shirt: same-fabric collar, navy placket with buttons
+    s += `<path d="M0,-112 L0,0" stroke="#1d2f7a" stroke-width="5"/>
+      ${[-80, -48, -16].map(by => `<circle cx="0" cy="${by}" r="5" fill="#fff" stroke="${INK}" stroke-width="2"/>`).join('')}
+      <path d="M-46,-140 L0,-106 L-20,-86 L-58,-128Z" fill="url(#pBatikBiru)" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M46,-140 L0,-106 L20,-86 L58,-128Z" fill="url(#pBatikBiru)" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
     if (opt.goggleNeck) s += goggles(0, -112, .9);
   } else {
     s += `<rect x="-22" y="-138" width="44" height="138" fill="url(#pBandV)" stroke="${INK}" stroke-width="4"/>
@@ -459,7 +458,7 @@ function hijabBack(c) {
     return `<path d="M-112,-262 C-112,-336 -66,-382 0,-382 C66,-382 112,-336 112,-262 C114,-206 122,-170 116,-140 Q0,-96 -116,-140 C-122,-170 -114,-206 -112,-262Z" fill="${c.hijab}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
      <path d="M-92,-160 Q-50,-128 -14,-122 M92,-160 Q50,-128 14,-122" fill="none" stroke="${c.hijabS}" stroke-width="5" stroke-linecap="round"/>`;
   }
-  const hem = c.top === C.shirt ? -40 : -78;
+  const hem = -72;
   return `<path d="M-112,-262 C-112,-336 -66,-382 0,-382 C66,-382 112,-336 112,-262 C116,-200 140,-160 150,-110 L150,${hem} Q0,${hem + 34} -150,${hem} L-150,-110 C-140,-160 -116,-200 -112,-262Z" fill="${c.hijab}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
    <path d="M-96,-150 Q-60,-110 -18,-100 M96,-150 Q60,-110 18,-100" fill="none" stroke="${c.hijabS}" stroke-width="5" stroke-linecap="round"/>`;
 }
@@ -970,7 +969,7 @@ const BOARD = {
   scale(h) {
     const pig = (x, y, wet) => {
       const k = 1.45, sk = CHAR.tugu.skin;
-      const sleeve = (d) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${24 * k}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${C.shirt}" stroke-width="${17 * k}" stroke-linecap="round"/>`;
+      const sleeve = (d) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${24 * k}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="url(#pBatikBiruL)" stroke-width="${17 * k}" stroke-linecap="round"/>`;
       const P = (dx, dy) => `${x + dx * k},${y + dy * k}`;
       let g = ch('tugu', wet ? 'happy' : 'surprise', { x: x - 62 * k, y: y - 66 * k, s: .5 * k });
       g += `<ellipse cx="${x - 96 * k}" cy="${y - 34 * k}" rx="${24 * k}" ry="${18 * k}" fill="#8d8f96" stroke="${INK}" stroke-width="4"/><ellipse cx="${x + 108 * k}" cy="${y - 34 * k}" rx="${24 * k}" ry="${18 * k}" fill="#8d8f96" stroke="${INK}" stroke-width="4"/>`;
