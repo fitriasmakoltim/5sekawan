@@ -209,6 +209,65 @@ footer b { color: var(--gold-soft); }
   .calc .lines .k:empty { display: none; }
   .calc .lines .k { margin-top: 6px; }
 }
+
+/* ---- byline, beranda ---- */
+.byline { margin: 0; font-weight: 800; color: var(--gold-soft); letter-spacing: .02em; }
+.home .id-card { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 16px; }
+.home dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; }
+.home dl div { min-width: 0; }
+.home dt { font-size: 12.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--maroon); }
+.home dd { margin: 0; font-weight: 700; }
+.info { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 16px 14px; display: grid; gap: 6px; }
+.info h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--maroon); }
+.info p, .info ol { margin: 0; }
+.info ol { padding-left: 1.3em; display: grid; gap: 3px; }
+.info .src { font-size: 13.5px; color: var(--ink-soft); }
+.menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.menu .mi { text-decoration: none; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 4px 4px 0 var(--ink); padding: 10px 12px; display: grid; gap: 2px; transition: transform .12s ease, box-shadow .12s ease; }
+.menu .mi .k { font-family: var(--f-display); font-size: 22px; line-height: 1; }
+.menu .mi span:last-child { font-size: 14px; font-weight: 700; line-height: 1.25; }
+.menu .mi:hover, .menu .mi:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); outline: none; }
+footer h3 { margin: 0; font-family: var(--f-display); font-weight: 400; color: var(--gold); font-size: 22px; }
+footer ol { margin: 0 0 6px; padding-left: 1.3em; display: grid; gap: 2px; }
+
+/* ---- Lab Mini ---- */
+.lab { background: var(--paper); color: var(--ink); border: 4px solid var(--ink); border-radius: 12px; box-shadow: 6px 6px 0 var(--ink); padding: 0 0 14px; display: grid; gap: 12px; overflow: hidden; scroll-margin-top: 70px; }
+.lab-hd { background: #1f6f9c; border-bottom: 4px solid var(--ink); padding: 10px 16px 12px; display: grid; gap: 2px; }
+.lab-tag { justify-self: start; font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--ink); border: 2px solid var(--ink); border-radius: 6px; padding: 0 8px; }
+.lab-hd h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(22px, 5vw, 30px); line-height: 1.05; color: #fff; -webkit-text-stroke: 1px var(--ink); text-shadow: 2px 2px 0 var(--ink); }
+.lab-intro { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 10px; align-items: center; padding: 0 16px; }
+.lab-intro .av { width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--ink); overflow: hidden; background: var(--cream); }
+.lab-intro .av svg { width: 100%; height: 100%; display: block; }
+.lab-intro p { margin: 0; font-family: var(--f-talk); font-weight: 700; font-size: 16px; line-height: 1.35; }
+.lab-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; padding: 0 16px; align-items: start; }
+.lab-stage svg { display: block; width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 8px; background: #fff; }
+.lab-ctrl { display: grid; gap: 8px; min-width: 0; }
+.lab-lbl { margin: 4px 0 0; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--maroon); }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { font: inherit; font-weight: 700; font-size: 14.5px; color: var(--ink); background: #fff; border: 2.5px solid var(--ink); border-radius: 999px; padding: 3px 12px; cursor: pointer; transition: background .12s ease; }
+.seg button:hover { background: #fff3c4; }
+.seg button.on { background: var(--gold); box-shadow: 2px 2px 0 var(--ink); }
+.seg button:focus-visible, .lab-btn:focus-visible, .lab input[type=range]:focus-visible { outline: 3px solid #1f6f9c; outline-offset: 2px; }
+.sl { display: flex; justify-content: space-between; gap: 8px; margin-top: 4px; font-size: 14.5px; font-weight: 800; color: var(--ink); }
+.sl output { font-variant-numeric: tabular-nums; color: #1f6f9c; white-space: nowrap; }
+.lab input[type=range] { width: 100%; accent-color: #1f6f9c; height: 26px; cursor: pointer; }
+.lab-btn { justify-self: start; font: inherit; font-weight: 800; font-size: 16px; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink); padding: 6px 16px; cursor: pointer; margin-top: 4px; }
+.lab-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.lab-out { margin: 0 16px; background: #fff8d6; border: 2.5px solid var(--ink); border-radius: 8px; padding: 8px 12px; font-size: 15.5px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.lab-out p { margin: 0; }
+.lab-ch { margin: 0 16px; display: grid; gap: 6px; }
+.lab-ch > b { font-family: var(--f-display); font-weight: 400; font-size: 20px; color: var(--maroon); }
+.lab-ch ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.lab-ch li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 8px; align-items: start; font-size: 15.5px; line-height: 1.4; }
+.lab-ch .tick { width: 22px; height: 22px; border: 2.5px solid var(--ink); border-radius: 6px; background: #fff; margin-top: 1px; display: grid; place-items: center; }
+.lab-ch li.ok .tick { background: var(--ok); border-color: var(--ok); }
+.lab-ch li.ok .tick::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg) translate(-1px, -1px); }
+.lab-ch li.ok { color: var(--ok); }
+@media (max-width: 620px) {
+  .lab-body { grid-template-columns: minmax(0, 1fr); }
+  .home dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
@@ -222,12 +281,61 @@ footer b { color: var(--gold-soft); }
     <h1>Lima Sekawan<small>dan Rahasia Fluida di Bumi Anoa</small></h1>
     <p class="lede">Soru, Rume, Tugu, Devi, dan Oto menemukan pertanyaan fisika di sungai, laut, dan tempat cuci motor di Sulawesi Tenggara. Bu Fitria membantu mereka menjawabnya.</p>
     <div class="meta"><span class="chip">Massa Jenis</span><span class="chip">Tekanan Hidrostatis</span><span class="chip">Hukum Pascal</span><span class="chip">Hukum Archimedes</span></div>
+    <p class="byline">Fitria Ashari · SMA Negeri 1 Kolaka Timur</p>
     <div id="coverArt"></div>
   </header>
 
   <nav class="toc" aria-label="Daftar isi"><div class="row">
-    <a href="#tokoh">Tokoh</a><a href="#bab-1">Bab 1</a><a href="#bab-2">Bab 2</a><a href="#bab-3">Bab 3</a><a href="#bab-4">Bab 4</a><a href="#rangkuman">Rangkuman</a><a href="#kuis">Kuis</a>
+    <a href="#beranda">Beranda</a><a href="#tokoh">Tokoh</a><a href="#bab-1">Bab 1</a><a href="#bab-2">Bab 2</a><a href="#bab-3">Bab 3</a><a href="#bab-4">Bab 4</a><a href="#rangkuman">Rangkuman</a><a href="#kuis">Kuis</a>
   </div></nav>
+
+  <section id="beranda" class="wrap home" style="scroll-margin-top:70px">
+    <div class="sec-head"><h2>Beranda</h2><p>Media pembelajaran interaktif berbentuk komik untuk materi Fluida Statis.</p></div>
+    <div class="id-card">
+      <dl>
+        <div><dt>Mata pelajaran</dt><dd>Fisika</dd></div>
+        <div><dt>Fase / Kelas</dt><dd>F / XI SMA</dd></div>
+        <div><dt>Materi</dt><dd>Fluida Statis</dd></div>
+        <div><dt>Penyusun</dt><dd>Fitria Ashari</dd></div>
+        <div><dt>Sekolah</dt><dd>SMA Negeri 1 Kolaka Timur</dd></div>
+        <div><dt>Waktu belajar</dt><dd>± 2 × 45 menit</dd></div>
+      </dl>
+    </div>
+    <article class="info">
+      <h3>Capaian Pembelajaran</h3>
+      <p>Fisika Fase F, elemen <b>Pemahaman Fisika</b>: peserta didik mampu menerapkan konsep fisika, termasuk <b>penerapan hukum fluida dalam kehidupan sehari-hari</b>. Elemen <b>Keterampilan Proses</b>: mengamati, mempertanyakan dan memprediksi, menyelidiki, menganalisis, mengevaluasi, dan mengomunikasikan hasil.</p>
+      <p class="src">Keputusan Kepala BSKAP Nomor 032/H/KR/2024.</p>
+    </article>
+    <article class="info">
+      <h3>Tujuan Pembelajaran</h3>
+      <p>Setelah membaca komik dan mencoba Lab Mini, kamu dapat:</p>
+      <ol>
+        <li>menjelaskan massa jenis dan menentukan apakah benda terapung, melayang, atau tenggelam;</li>
+        <li>menghitung tekanan hidrostatis pada kedalaman tertentu;</li>
+        <li>menerapkan Hukum Pascal untuk menjelaskan cara kerja pompa hidrolik;</li>
+        <li>menghitung gaya apung (Hukum Archimedes) dan membandingkannya di air tawar dan air laut;</li>
+        <li>mengaitkan konsep fluida dengan peristiwa di sekitar Sulawesi Tenggara.</li>
+      </ol>
+    </article>
+    <article class="info">
+      <h3>Cara Menggunakan</h3>
+      <ol>
+        <li>Kenali lima tokoh dan Bu Fitria di bagian <b>Tokoh</b>.</li>
+        <li>Setiap bab dibuka dengan <b>Stimulus Masalah</b>. Diskusikan dugaanmu dulu bersama teman.</li>
+        <li>Baca komiknya, lalu ikuti <b>Ayo Hitung</b> bersama Tugu.</li>
+        <li>Coba <b>Lab Mini</b> di akhir bab: geser, pilih, amati, dan selesaikan tantangannya.</li>
+        <li>Tutup dengan <b>Rangkuman</b> dan <b>Kuis</b>.</li>
+      </ol>
+    </article>
+    <div class="menu">
+      <a href="#tokoh" class="mi"><span class="k">Tokoh</span><span>Kenalan dengan lima sekawan</span></a>
+      <a href="#bab-1" class="mi"><span class="k">Bab 1</span><span>Massa jenis · Lab Mini 1</span></a>
+      <a href="#bab-2" class="mi"><span class="k">Bab 2</span><span>Tekanan hidrostatis · Lab Mini 2</span></a>
+      <a href="#bab-3" class="mi"><span class="k">Bab 3</span><span>Hukum Pascal · Lab Mini 3</span></a>
+      <a href="#bab-4" class="mi"><span class="k">Bab 4</span><span>Hukum Archimedes · Lab Mini 4</span></a>
+      <a href="#kuis" class="mi"><span class="k">Kuis</span><span>Rangkuman dan evaluasi</span></a>
+    </div>
+  </section>
 
   <section id="tokoh" class="wrap" style="scroll-margin-top:70px">
     <div class="sec-head"><h2>Kenalan Dulu</h2><p>Lima sahabat dari lima suku di Sulawesi Tenggara, satu kelas, satu rasa penasaran.</p></div>
@@ -249,8 +357,14 @@ footer b { color: var(--gold-soft); }
   </section>
 
   <footer>
-    <div><b>Sumber materi:</b> Fisika 2 untuk SMA/MA Kelas XI, Bab Fluida (Fluida Statis, hlm. 118–131).</div>
-    <div><b>Tokoh guru:</b> Fitria Ashari. Tokoh siswa dan latar adalah karya fiksi untuk pembelajaran.</div>
+    <h3>Daftar Pustaka</h3>
+    <ol>
+      <li>Fisika 2 untuk SMA/MA Kelas XI, Bab Fluida Statis, hlm. 118–131.</li>
+      <li>Keputusan Kepala BSKAP Kemendikbudristek Nomor 032/H/KR/2024 tentang Capaian Pembelajaran.</li>
+      <li>PROSEA (Plant Resources of South-East Asia): <i>Diospyros</i> (eboni), massa jenis kayu 1.010–1.270 kg/m³.</li>
+      <li>Aalto University, CHEM-E2105: <i>Cell wall and mass-volume relationships</i> (massa jenis dinding sel kayu ±1.500 kg/m³).</li>
+    </ol>
+    <div><b>Penyusun:</b> Fitria Ashari, SMA Negeri 1 Kolaka Timur. Ilustrasi dan pemrograman dikembangkan dengan bantuan AI (Claude). Tokoh siswa dan latar adalah karya fiksi untuk pembelajaran.</div>
   </footer>
 </div>
 
@@ -1106,6 +1220,7 @@ const STORY = [
   },
 
   /* ---------------- BAB 2 ---------------- */
+  { type: 'sim', sim: 'rho' },
   { type: 'chapter', id: 'bab-2', no: 'Bab 2', title: 'Telinga Oto Terasa Sakit', topic: 'Tekanan Hidrostatis' },
   {
     h: 560, bg: 'bajoWide',
@@ -1179,6 +1294,7 @@ const STORY = [
   },
 
   /* ---------------- BAB 3 ---------------- */
+  { type: 'sim', sim: 'pressure' },
   { type: 'chapter', id: 'bab-3', no: 'Bab 3', title: 'Mobil Terangkat di Doorsmeer', topic: 'Hukum Pascal' },
   {
     h: 820, bg: 'doorsmeer',
@@ -1239,6 +1355,7 @@ const STORY = [
   },
 
   /* ---------------- BAB 4 ---------------- */
+  { type: 'sim', sim: 'pascal' },
   { type: 'chapter', id: 'bab-4', no: 'Bab 4', title: 'Lebih Mudah Mengapung di Laut', topic: 'Hukum Archimedes · Gaya Apung' },
   {
     h: 820, bg: 'moramo',
@@ -1305,6 +1422,7 @@ const STORY = [
     ],
     note: 'Di dalam air, Soru hanya perlu menahan 100 N, seperlima berat Tugu di darat. Inilah berat semu: berat di udara dikurangi gaya apung.',
   },
+  { type: 'sim', sim: 'arch' },
   {
     h: 780, bg: 'classroom',
     chars: [['soru', 'grin', { x: 230, y: 840, s: 1.05, pose: 'cheer' }], ['fitria', 'happy', { x: 800, y: 840, s: 1.05, flip: true }]],
@@ -1341,6 +1459,231 @@ const QUIZ = [
   { q: 'Oto lebih mudah mengapung di Pantai Nambo daripada di Air Terjun Moramo karena...', o: ['Ombak laut mengangkat tubuhnya', 'Massa jenis air laut lebih besar, sehingga gaya apungnya lebih besar', 'Air tawar lebih dingin', 'Tubuh Oto lebih ringan di laut'], a: 1, e: 'FA = ρf·Vbf·g. Dengan volume tercelup sama, ρ air laut (±1.025) > ρ air tawar (1.000), maka FA di laut lebih besar.' },
   { q: 'Sebuah batu beratnya 30 N di udara dan 22 N saat ditimbang di dalam air. Gaya apung pada batu adalah...', o: ['8 N', '22 N', '30 N', '52 N'], a: 0, e: 'Gaya apung = berat di udara − berat di dalam air = 30 − 22 = 8 N.' },
 ];
+</script>
+<script>/* ===== Lab Mini: four interactive fluid simulations ===== */
+const fmt = (n, d = 0) => n.toLocaleString('id-ID', { minimumFractionDigits: d, maximumFractionDigits: d });
+const G = 10;
+
+function simShell(id, no, title, who, intro, controls, svg, readout, challenges) {
+  return `<section class="lab" id="${id}" data-sim="${id}">
+    <div class="lab-hd"><span class="lab-tag">Lab Mini ${no}</span><h3>${title}</h3></div>
+    <div class="lab-intro"><div class="av">${avatar(who, 'grin')}</div><p>${intro}</p></div>
+    <div class="lab-body">
+      <div class="lab-stage">${svg}</div>
+      <div class="lab-ctrl">${controls}</div>
+    </div>
+    <div class="lab-out" aria-live="polite">${readout}</div>
+    <div class="lab-ch"><b>Tantangan</b><ul>${challenges.map((c, i) => `<li data-ch="${i}"><span class="tick" aria-hidden="true"></span><span>${c}</span></li>`).join('')}</ul></div>
+  </section>`;
+}
+function seg(name, opts, sel) {
+  return `<div class="seg" role="radiogroup" data-name="${name}">${opts.map((o, i) => `<button type="button" role="radio" aria-checked="${i === sel}" data-v="${i}" class="${i === sel ? 'on' : ''}">${o}</button>`).join('')}</div>`;
+}
+function slider(id, label, min, max, step, val, unit) {
+  return `<label class="sl" for="${id}"><span>${label}</span><output id="${id}-o">${val} ${unit}</output></label><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}">`;
+}
+function wireSeg(root, name, cb) {
+  root.querySelector(`.seg[data-name="${name}"]`).addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    b.parentElement.querySelectorAll('button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-checked', x === b); });
+    cb(+b.dataset.v);
+  });
+}
+function done(root, i) { const li = root.querySelector(`[data-ch="${i}"]`); if (li && !li.classList.contains('ok')) li.classList.add('ok'); }
+
+/* ---------- 1. Massa jenis: terapung, melayang, tenggelam ---------- */
+const BENDA1 = [
+  { n: 'Kayu kering', r: 600, c: '#b8854f' }, { n: 'Es', r: 920, c: '#dff4fc' }, { n: 'Kayu eboni', r: 1150, c: '#3b2a22' },
+  { n: 'Aluminium', r: 2700, c: '#c9ced4' }, { n: 'Besi', r: 7900, c: '#7d8790' }, { n: 'Atur sendiri', r: null, c: '#f2c230' },
+];
+const FLUID = [{ n: 'Air tawar', r: 1000, c: '#8fd4ec' }, { n: 'Air laut', r: 1025, c: '#4fa9d2' }, { n: 'Minyak goreng', r: 900, c: '#f3d36b' }];
+function simRho() {
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Gelas berisi zat cair dan sebuah benda">
+    <rect width="600" height="380" fill="#fbfdff"/>
+    <rect id="r-fl" x="164" y="120" width="272" height="226" fill="#8fd4ec" opacity=".85" style="transition:fill .4s"/>
+    <path d="M164,120 q34,-9 68,0 t68,0 t68,0 t68,0" fill="none" stroke="#fff" stroke-width="4"/>
+    <g id="r-obj" style="transition:transform .7s cubic-bezier(.3,1.4,.5,1)"><rect x="250" y="0" width="100" height="70" rx="8" id="r-blk" fill="#b8854f" stroke="${INK}" stroke-width="4"/>
+      <text id="r-lbl" x="300" y="44" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="20" fill="${INK}"></text></g>
+    <path d="M160,40 L160,350 Q160,360 170,360 L430,360 Q440,360 440,350 L440,40" fill="none" stroke="#3b4a50" stroke-width="7"/>
+    <text x="300" y="30" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="26" id="r-state" fill="#1b7a3c">TERAPUNG</text>
+    <g font-family="Comic Neue, sans-serif" font-weight="700" font-size="20" fill="#333"><text x="456" y="138" id="r-flname">Air tawar</text><text x="456" y="162" id="r-flrho">1.000 kg/m³</text></g>
+  </svg>`;
+  const ctrl = `<p class="lab-lbl">Benda</p>${seg('benda', BENDA1.map(b => b.n), 0)}
+    <div id="r-custom" hidden>${slider('r-rho', 'Massa jenis benda', 300, 3000, 5, 1000, 'kg/m³')}</div>
+    <p class="lab-lbl">Zat cair</p>${seg('fluida', FLUID.map(f => f.n), 0)}`;
+  const out = `<p id="r-out"></p>`;
+  const html = simShell('lab-1', 1, 'Terapung, melayang, atau tenggelam?', 'tugu',
+    'Pilih benda dan zat cairnya. Bandingkan massa jenis benda (ρb) dengan massa jenis zat cair (ρf), lalu tebak dulu sebelum melihat hasilnya!',
+    ctrl, svg, out,
+    ['Temukan benda yang <b>terapung di air tawar</b> tetapi <b>tenggelam di minyak goreng</b>.', 'Pilih <b>Atur sendiri</b>, lalu buat benda <b>melayang</b> di air laut.', 'Buktikan bahwa <b>kayu eboni</b> tenggelam di air tawar.']);
+  return { html, init(root) {
+    let bi = 0, fi = 0; const seen = {};
+    const rr = root.querySelector('#r-rho');
+    function upd() {
+      const b = BENDA1[bi], f = FLUID[fi];
+      const rb = b.r ?? +rr.value; const rf = f.r;
+      root.querySelector('#r-custom').hidden = b.r !== null;
+      root.querySelector('#r-rho-o').textContent = `${fmt(+rr.value)} kg/m³`;
+      root.querySelector('#r-fl').setAttribute('fill', f.c);
+      root.querySelector('#r-blk').setAttribute('fill', b.c);
+      root.querySelector('#r-lbl').textContent = fmt(rb);
+      root.querySelector('#r-lbl').setAttribute('fill', b.n === 'Kayu eboni' ? '#fff' : INK);
+      root.querySelector('#r-flname').textContent = f.n; root.querySelector('#r-flrho').textContent = fmt(rf) + ' kg/m³';
+      let y, st, col, msg;
+      if (Math.abs(rb - rf) <= 5) { y = 233 - 35; st = 'MELAYANG'; col = '#b07a1c'; msg = `ρb ≈ ρf (${fmt(rb)} ≈ ${fmt(rf)} kg/m³). Benda diam di dalam zat cair, tidak naik dan tidak turun.`; }
+      else if (rb < rf) { const fr = rb / rf; y = 120 + fr * 70 - 70; st = 'TERAPUNG'; col = '#1b7a3c'; msg = `ρb < ρf (${fmt(rb)} < ${fmt(rf)} kg/m³). Bagian benda yang tercelup ${fmt(fr * 100)}%, sisanya di atas permukaan.`; }
+      else { y = 356 - 70; st = 'TENGGELAM'; col = '#c0392b'; msg = `ρb > ρf (${fmt(rb)} > ${fmt(rf)} kg/m³). Benda turun sampai ke dasar.`; }
+      root.querySelector('#r-obj').style.transform = `translateY(${y}px)`;
+      const s = root.querySelector('#r-state'); s.textContent = st; s.setAttribute('fill', col);
+      root.querySelector('#r-out').innerHTML = `<b>${b.n}</b> di <b>${f.n.toLowerCase()}</b>: ${msg}`;
+      const key = b.n + '|' + f.n; seen[key] = st;
+      if (seen['Es|Air tawar'] === 'TERAPUNG' && seen['Es|Minyak goreng'] === 'TENGGELAM') done(root, 0);
+      if (b.r === null && fi === 1 && st === 'MELAYANG') done(root, 1);
+      if (b.n === 'Kayu eboni' && fi === 0) done(root, 2);
+    }
+    wireSeg(root, 'benda', v => { bi = v; upd(); }); wireSeg(root, 'fluida', v => { fi = v; upd(); });
+    rr.addEventListener('input', upd); upd();
+  } };
+}
+
+/* ---------- 2. Tekanan hidrostatis ---------- */
+function simPressure() {
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Oto menyelam di laut dengan penggaris kedalaman">
+    <defs><linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd3ea"/><stop offset="1" stop-color="#0c3a5c"/></linearGradient></defs>
+    <rect width="600" height="380" fill="#dff3fb"/><rect y="40" width="600" height="340" fill="url(#gP)" id="p-water"/>
+    <path d="M0,40 q25,-8 50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0 t50,0" fill="none" stroke="#fff" stroke-width="4"/>
+    ${stiltHouse(520, 40, .35)}
+    <g font-family="Baloo 2, sans-serif" font-weight="800" font-size="16" fill="#fff">${[0, 5, 10, 15, 20, 25].map(m => `<path d="M14,${40 + m * 12} h22" stroke="#fff" stroke-width="3"/><text x="40" y="${46 + m * 12}">${m} m</text>`).join('')}</g>
+    <g id="p-diver" style="transition:transform .5s ease"></g>
+    <g transform="translate(410,120)"><rect x="0" y="0" width="160" height="200" rx="14" fill="#fff" stroke="${INK}" stroke-width="4"/>
+      <text x="80" y="30" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="18" fill="${INK}">Tekanan air</text>
+      <rect x="62" y="44" width="36" height="140" rx="8" fill="#e9eef2" stroke="${INK}" stroke-width="3"/>
+      <rect id="p-bar" x="64" y="182" width="32" height="0" rx="6" fill="#2b8fd6" style="transition:all .4s"/>
+      <text x="80" y="200" text-anchor="middle" font-size="0">.</text></g>
+  </svg>`;
+  const ctrl = `${slider('p-h', 'Kedalaman (h)', 0, 25, 0.5, 2, 'm')}
+    <p class="lab-lbl">Zat cair</p>${seg('pfl', ['Air tawar', 'Air laut'], 1)}`;
+  const html = simShell('lab-2', 2, 'Seberapa dalam Oto menyelam?', 'oto',
+    'Geser kedalaman dan lihat tekanan hidrostatis yang menekan tubuh Oto. Perhatikan wajahnya!',
+    ctrl, svg, `<p id="p-out"></p>`,
+    ['Cari kedalaman di laut saat tekanan hidrostatis mencapai <b>±1 atm</b> (±101.000 Pa).', 'Pada kedalaman yang sama, bandingkan <b>air tawar</b> dan <b>air laut</b>. Mana yang tekanannya lebih besar?']);
+  return { html, init(root) {
+    let fi = 1; const hEl = root.querySelector('#p-h'); const seenF = new Set();
+    function upd() {
+      const h = +hEl.value, rho = fi ? 1025 : 1000, P = rho * G * h, atm = P / 101325;
+      root.querySelector('#p-h-o').textContent = `${fmt(h, 1)} m`;
+      const face = h < 6 ? 'smile' : h < 14 ? 'worry' : 'wince';
+      root.querySelector('#p-diver').innerHTML = ch('oto', face, { x: 250, y: 0, s: .24, swim: true, top: '#2c7fb8', goggles: 'eyes', rot: 0, pose: h >= 14 ? 'ear' : 'none' });
+      root.querySelector('#p-diver').style.transform = `translateY(${40 + h * 12 + 62}px)`;
+      const bh = Math.min(136, atm / 3 * 136);
+      const bar = root.querySelector('#p-bar'); bar.setAttribute('height', bh); bar.setAttribute('y', 182 - bh); bar.setAttribute('fill', atm > 2 ? '#c0392b' : atm > 1 ? '#e8873a' : '#2b8fd6');
+      root.querySelector('#p-water').setAttribute('opacity', fi ? 1 : .8);
+      root.querySelector('#p-out').innerHTML = `Ph = ρ × g × h = ${fmt(rho)} × 10 × ${fmt(h, 1)} = <b>${fmt(P)} Pa</b> ≈ <b>${fmt(atm, 2)} atm</b>. ${h >= 14 ? 'Tekanan sudah besar: penyelam harus ekualisasi dan tidak memaksa turun.' : h >= 6 ? 'Telinga mulai terasa ditekan.' : 'Masih nyaman.'}`;
+      if (fi === 1 && atm >= .97 && atm <= 1.04) done(root, 0);
+      seenF.add(fi + '@' + h); if (seenF.has('0@' + h) && seenF.has('1@' + h) && h > 0) done(root, 1);
+    }
+    hEl.addEventListener('input', upd); wireSeg(root, 'pfl', v => { fi = v; upd(); }); upd();
+  } };
+}
+
+/* ---------- 3. Hukum Pascal: pompa hidrolik doorsmeer ---------- */
+function simPascal() {
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Pompa hidrolik mengangkat mobil">
+    <rect width="600" height="380" fill="#eef2f5"/><rect y="340" width="600" height="40" fill="#8f979c"/>
+    <path id="k-oil" d="" fill="#f2c230" stroke="#3b4a50" stroke-width="5" opacity=".9"/>
+    <g id="k-small" style="transition:transform .9s ease"><rect id="k-sp" x="0" y="0" width="40" height="20" fill="#7d8790" stroke="${INK}" stroke-width="3"/><path id="k-arrow" d="" stroke="#d2342c" stroke-width="6" fill="none"/></g>
+    <g id="k-big" style="transition:transform .9s ease"><rect id="k-bp" x="0" y="0" width="200" height="22" fill="#7d8790" stroke="${INK}" stroke-width="3"/><g id="k-car"></g></g>
+    <text id="k-f1" x="0" y="0" font-family="Baloo 2, sans-serif" font-weight="800" font-size="20" fill="#d2342c"></text>
+    <text id="k-f2" x="0" y="0" font-family="Baloo 2, sans-serif" font-weight="800" font-size="20" fill="#1b7a3c"></text>
+  </svg>`;
+  const ctrl = `${slider('k-m', 'Massa mobil', 800, 2000, 50, 1200, 'kg')}
+    ${slider('k-a1', 'Luas penampang kecil (A₁)', 0.002, 0.02, 0.001, 0.005, 'm²')}
+    ${slider('k-a2', 'Luas penampang besar (A₂)', 0.1, 0.5, 0.05, 0.2, 'm²')}
+    <button type="button" class="lab-btn" id="k-go">Tekan tuas pompa</button>`;
+  const html = simShell('lab-3', 3, 'Pompa hidrolik di doorsmeer', 'devi',
+    'Atur massa mobil dan luas kedua penampang. Berapa gaya yang perlu Devi berikan untuk mengangkat mobil?',
+    ctrl, svg, `<p id="k-out"></p>`,
+    ['Untuk mobil <b>1.200 kg</b>, atur agar gaya tekan F₁ <b>tidak lebih dari 100 N</b>.', 'Tekan tuas pompa dan perhatikan: piston mana yang bergerak lebih jauh?']);
+  return { html, init(root) {
+    const m = root.querySelector('#k-m'), a1 = root.querySelector('#k-a1'), a2 = root.querySelector('#k-a2'); let up = false;
+    function upd() {
+      const M = +m.value, A1 = +a1.value, A2 = +a2.value, F2 = M * G, F1 = F2 * A1 / A2;
+      root.querySelector('#k-m-o').textContent = `${fmt(M)} kg`; root.querySelector('#k-a1-o').textContent = `${fmt(A1, 3)} m²`; root.querySelector('#k-a2-o').textContent = `${fmt(A2, 2)} m²`;
+      const ws = 18 + A1 * 1800, wb = 120 + A2 * 300, xs = 90, xb = 380, top = 200, bot = 320;
+      root.querySelector('#k-oil').setAttribute('d', `M${xs - ws / 2},${top} L${xs - ws / 2},${bot} L${xb + wb / 2},${bot} L${xb + wb / 2},${top} L${xb - wb / 2},${top} L${xb - wb / 2},${bot - 50} L${xs + ws / 2},${bot - 50} L${xs + ws / 2},${top}Z`);
+      const sp = root.querySelector('#k-sp'); sp.setAttribute('x', xs - ws / 2 + 3); sp.setAttribute('width', ws - 6); sp.setAttribute('y', top - 20);
+      root.querySelector('#k-arrow').setAttribute('d', `M${xs},${top - 90} v60 m-12,-16 l12,16 l12,-16`);
+      const bp = root.querySelector('#k-bp'); bp.setAttribute('x', xb - wb / 2 + 3); bp.setAttribute('width', wb - 6); bp.setAttribute('y', top - 22);
+      root.querySelector('#k-car').innerHTML = `<g transform="translate(${xb},${top - 22}) scale(.55)">${car(0, 0, 1, '#2d6db3')}</g>`;
+      const t1 = root.querySelector('#k-f1'); t1.setAttribute('x', xs + 18); t1.setAttribute('y', top - 70); t1.textContent = `F₁ = ${fmt(F1)} N`;
+      const t2 = root.querySelector('#k-f2'); t2.setAttribute('x', xb - 60); t2.setAttribute('y', 40); t2.textContent = `F₂ = ${fmt(F2)} N`;
+      const lift = Math.min(60, 60 * (A1 / A2) * 20);
+      root.querySelector('#k-small').style.transform = up ? 'translateY(44px)' : '';
+      root.querySelector('#k-big').style.transform = up ? `translateY(${-Math.max(6, lift)}px)` : '';
+      root.querySelector('#k-out').innerHTML = `F₁ = F₂ × A₁/A₂ = ${fmt(F2)} × ${fmt(A1, 3)}/${fmt(A2, 2)} = <b>${fmt(F1)} N</b>, setara mengangkat beban sekitar <b>${fmt(F1 / G)} kg</b>. Gaya diperbesar <b>${fmt(A2 / A1)} kali</b>.${up ? ' Lihat: piston kecil turun jauh, mobil hanya naik sedikit.' : ''}`;
+      if (M === 1200 && F1 <= 100) done(root, 0);
+    }
+    [m, a1, a2].forEach(el => el.addEventListener('input', () => { up = false; upd(); }));
+    root.querySelector('#k-go').addEventListener('click', () => { up = !up; root.querySelector('#k-go').textContent = up ? 'Lepas tuas' : 'Tekan tuas pompa'; upd(); if (up) done(root, 1); });
+    upd();
+  } };
+}
+
+/* ---------- 4. Hukum Archimedes: neraca pegas ---------- */
+const BENDA4 = [{ n: 'Batu', r: 2500, c: '#9a9a8e' }, { n: 'Besi', r: 7900, c: '#7d8790' }, { n: 'Kayu', r: 600, c: '#b8854f' }];
+function simArch() {
+  const V = 0.0004;
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Benda digantung pada neraca pegas dan dicelupkan ke air">
+    <rect width="600" height="380" fill="#fbfdff"/>
+    <rect x="150" y="18" width="300" height="14" fill="#5b4a3c"/>
+    <g transform="translate(300,32)"><rect x="-38" y="0" width="76" height="120" rx="12" fill="#f2c230" stroke="${INK}" stroke-width="4"/>
+      <rect x="-24" y="14" width="48" height="92" rx="6" fill="#fff" stroke="${INK}" stroke-width="2.5"/>
+      ${[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => `<path d="M-24,${18 + i * 10} h12" stroke="${INK}" stroke-width="2"/>`).join('')}
+      <rect id="a-ind" x="-24" y="18" width="48" height="5" fill="#d2342c"/></g>
+    <rect x="150" y="190" width="300" height="160" fill="#8fd4ec" opacity=".85" id="a-fl"/>
+    <path d="M150,190 q37,-9 75,0 t75,0 t75,0 t75,0" fill="none" stroke="#fff" stroke-width="4"/>
+    <g id="a-obj" style="transition:transform .5s ease"><path d="M300,152 V0" id="a-str" stroke="${INK}" stroke-width="3"/><rect id="a-blk" x="260" y="0" width="80" height="80" rx="6" fill="#9a9a8e" stroke="${INK}" stroke-width="4"/></g>
+    <path d="M146,110 L146,350 Q146,360 156,360 L444,360 Q454,360 454,350 L454,110" fill="none" stroke="#3b4a50" stroke-width="7"/>
+    <g font-family="Baloo 2, sans-serif" font-weight="800" font-size="20"><text x="470" y="80" fill="${INK}">Terbaca:</text><text id="a-read" x="470" y="110" font-size="30" fill="#d2342c"></text></g>
+    <path id="a-up" d="" stroke="#1b8a3c" stroke-width="7" fill="none"/>
+  </svg>`;
+  const ctrl = `<p class="lab-lbl">Benda (volume 0,0004 m³)</p>${seg('ab', BENDA4.map(b => b.n), 0)}
+    <p class="lab-lbl">Zat cair</p>${seg('af', ['Air tawar (Moramo)', 'Air laut (Nambo)'], 0)}
+    ${slider('a-d', 'Bagian benda yang tercelup', 0, 100, 5, 0, '%')}`;
+  const html = simShell('lab-4', 4, 'Neraca pegas dan gaya apung', 'rume',
+    'Gantung benda pada neraca pegas, lalu celupkan pelan-pelan. Angka pada neraca berkurang karena air mendorong benda ke atas.',
+    ctrl, svg, `<p id="a-out"></p>`,
+    ['Celupkan <b>batu</b> seluruhnya ke <b>air tawar</b>, lalu ke <b>air laut</b>. Di mana gaya apungnya lebih besar?', 'Coba celupkan <b>kayu</b>. Mengapa neraca menunjuk 0 sebelum kayu tercelup seluruhnya?']);
+  return { html, init(root) {
+    let bi = 0, fi = 0; const d = root.querySelector('#a-d'); const seen = new Set();
+    function upd() {
+      const b = BENDA4[bi], rf = fi ? 1025 : 1000, W = b.r * V * G;
+      let frac = +d.value / 100; const fMax = b.r < rf ? b.r / rf : 1; let floats = false;
+      if (frac > fMax) { frac = fMax; floats = true; }
+      const FA = rf * V * frac * G, R = Math.max(0, W - FA);
+      root.querySelector('#a-d-o').textContent = `${d.value}%`;
+      root.querySelector('#a-blk').setAttribute('fill', b.c);
+      root.querySelector('#a-fl').setAttribute('fill', fi ? '#4fa9d2' : '#8fd4ec');
+      const yTop = 190 - 80 + frac * 80;
+      root.querySelector('#a-obj').style.transform = `translateY(${yTop}px)`;
+      root.querySelector('#a-str').setAttribute('d', `M300,${152 - yTop} V0`);
+      root.querySelector('#a-ind').setAttribute('y', 18 + Math.min(84, R / 32 * 84));
+      root.querySelector('#a-read').textContent = `${fmt(R, 2)} N`;
+      root.querySelector('#a-up').setAttribute('d', FA > 0.05 ? `M300,${yTop + 120} v-${20 + FA * 6} m-12,14 l12,-14 l12,14` : '');
+      root.querySelector('#a-out').innerHTML = `Berat di udara W = ${fmt(W, 2)} N. Gaya apung FA = ρf × Vbf × g = ${fmt(rf)} × ${fmt(V * frac, 5)} × 10 = <b>${fmt(FA, 2)} N</b>. Neraca menunjuk W − FA = <b>${fmt(R, 2)} N</b>.${floats ? ' <b>Kayu terapung:</b> gaya apung sudah sama dengan beratnya, jadi kayu tidak bisa dicelupkan lebih dalam tanpa ditekan.' : ''}`;
+      if (bi === 0 && +d.value === 100) { seen.add(fi); if (seen.has(0) && seen.has(1)) done(root, 0); }
+      if (bi === 2 && floats) done(root, 1);
+    }
+    wireSeg(root, 'ab', v => { bi = v; upd(); }); wireSeg(root, 'af', v => { fi = v; upd(); }); d.addEventListener('input', upd); upd();
+  } };
+}
+
+const SIMS = { rho: simRho, pressure: simPressure, pascal: simPascal, arch: simArch };
+function renderSim(key) {
+  const s = SIMS[key]();
+  const wrap = document.createElement('div'); wrap.innerHTML = s.html.trim();
+  const el = wrap.firstElementChild; s.init(el); return el;
+}
 </script>
 <script>
 const PHOTO = "";
@@ -1432,7 +1775,7 @@ document.getElementById('motifSwatch').innerHTML = `<svg viewBox="0 0 64 64"><re
 const strip = document.getElementById('strip');
 STORY.forEach(p => {
   const t = p.type;
-  strip.appendChild(t === 'chapter' ? renderChapter(p) : t === 'problem' ? renderProblem(p) : t === 'calc' ? renderCalc(p) : renderPanel(p));
+  strip.appendChild(t === 'sim' ? renderSim(p.sim) : t === 'chapter' ? renderChapter(p) : t === 'problem' ? renderProblem(p) : t === 'calc' ? renderCalc(p) : renderPanel(p));
 });
 
 document.getElementById('sum').innerHTML = SUMMARY.map(s => `<article class="s"><h3>${s.t}</h3><span class="f">${s.f}</span><p>${s.d}</p></article>`).join('');
